@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Interactive Image Slide Puzzle — a premium 3×3 tile puzzle game built with vanilla HTML, CSS, and JavaScript." />
+  <title>Slide Puzzle — Interactive Image Puzzle Game</title>
+
+  <!-- Typography: Inter (headlines) + Roboto (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Roboto:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER — Brand bar with logo & project badge
+       ============================================================ -->
+  <header class="site-header" role="banner">
+    <div class="header__inner">
+      <!-- Brand logo (inline SVG puzzle-piece icon) -->
+      <a href="#" class="header__brand" aria-label="Slide Puzzle home">
+        <svg class="header__logo" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <rect x="2" y="2" width="28" height="28" rx="6" stroke="currentColor" stroke-width="2.4"/>
+          <path d="M11 2v6a3 3 0 0 0 6 0V2M2 11h6a3 3 0 0 1 0 6H2M21 30v-6a3 3 0 0 1 6 0v6M30 21h-6a3 3 0 0 0 0 6h6"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span class="header__title">Slide Puzzle</span>
+      </a>
+
+    </div>
+  </header>
+
+  <!-- ============================================================
+       MAIN — Game wrapper: stats, board, controls, win overlay
+       ============================================================ -->
+  <main class="game" role="main">
+
+    <!-- ── Stats bar ─────────────────────────────────────────── -->
+    <section class="stats-bar" aria-label="Game statistics">
+      <div class="stat">
+        <span class="stat__label">Moves</span>
+        <span class="stat__value" id="moveCounter">0</span>
+      </div>
+      <div class="stat">
+        <span class="stat__label">Time</span>
+        <span class="stat__value" id="timer">00:00</span>
+      </div>
+    </section>
+
+    <!-- ── Preview strip (reference image) ───────────────────── -->
+    <details class="preview" id="previewDetails">
+      <summary class="preview__toggle" aria-expanded="false">
+        <svg class="preview__icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M2 6l8 8 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Show Target Image
+      </summary>
+      <div class="preview__img-wrap">
+        <img
+          src="puzzle.png"
+          alt="Target image showing the completed puzzle"
+          class="preview__img"
+          loading="lazy"
+        />
+      </div>
+    </details>
+
+    <!-- ── Puzzle board (3×3 CSS Grid) ───────────────────────── -->
+    <section
+      class="board-wrapper"
+      aria-label="Puzzle board — 3 by 3 sliding tile grid"
+    >
+      <div class="board" id="board" role="grid" aria-label="Slide puzzle board">
+        <!-- Tiles injected by JavaScript -->
+      </div>
+    </section>
+
+    <!-- ── Win overlay ───────────────────────────────────────── -->
+    <div class="win-overlay" id="winOverlay" aria-hidden="true" role="dialog" aria-label="Puzzle completed">
+      <div class="win-overlay__card">
+        <div class="win-overlay__icon" aria-hidden="true">🏆</div>
+        <h2 class="win-overlay__heading">Puzzle Solved!</h2>
+        <p class="win-overlay__sub">Great work — here are your stats:</p>
+
+        <div class="win-overlay__stats">
+          <div class="win-stat">
+            <span class="win-stat__label">Moves</span>
+            <span class="win-stat__value" id="winMoves">0</span>
+          </div>
+          <div class="win-stat">
+            <span class="win-stat__label">Time</span>
+            <span class="win-stat__value" id="winTime">00:00</span>
+          </div>
+        </div>
+
+        <button class="btn btn--accent" id="winPlayAgain" type="button">
+          Play Again
+        </button>
+      </div>
+    </div>
+
+    <!-- ── Controls ──────────────────────────────────────────── -->
+    <section class="controls" aria-label="Game controls">
+      <button class="btn btn--primary" id="btnShuffle" type="button">
+        <svg class="btn__icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M3 6h2l4 8h4l4-8h2M3 14h2l4-8h4l4 8h2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        New Game
+      </button>
+
+      <button class="btn btn--secondary" id="btnToggleNums" type="button" aria-pressed="false">
+        <svg class="btn__icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M6 4v12M10 8v8M14 4v12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        Toggle Numbers
+      </button>
+    </section>
+
+  </main>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
