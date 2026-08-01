@@ -31,3 +31,40 @@ A lightweight, fully responsive 3x3 sliding image puzzle application built entir
 ├── index.html   # Semantic structure & accessibility landmarks
 ├── style.css    # Responsive styles, design variables & CSS grid
 └── script.js    # State management, shuffle algorithm & timer logic
+
+🚀 Quick Start
+No build tools or package managers required.
+
+Clone the repository:
+
+Bash
+git clone https://github.com/https://github.com/Bisrat-joseph/Slide-puzzle-game.git
+Navigate into the directory:
+
+Bash
+cd <YOUR-REPO-NAME>
+Run the application:
+
+Double-click index.html to open it directly in your browser, or
+
+Use VS Code's Live Server extension to launch local development.
+
+👨‍💻 Author
+Name: Bisrat Yosef
+
+GitHub: Bisrat-joseph
+
+
+---
+
+### How to add it to your project via terminal:
+
+```bash
+# Create the file (or open it in your editor)
+code README.md
+Once pasted, commit and push it to GitHub:
+
+Bash
+git add README.md
+git commit -m "docs: add comprehensive project README"
+git push origin main
