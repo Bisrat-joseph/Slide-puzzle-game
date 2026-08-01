@@ -38,11 +38,11 @@ No build tools or package managers required.
 Clone the repository:
 
 Bash
-git clone https://github.com/https://github.com/Bisrat-joseph/Slide-puzzle-game.git
+git clone https://github.com/https://github.com/Bisrat-joseph/DecodeLabs-Internship..git
 Navigate into the directory:
 
 Bash
-cd <YOUR-REPO-NAME>
+cd DecodeLabs-Internship.
 Run the application:
 
 Double-click index.html to open it directly in your browser, or
